@@ -3,17 +3,17 @@
 <h4>1. Enunciado geral: </h4>
 <p>A ACMEPublishing é uma editora que gerencia livros e autores e que deseja automatizar o
 seu catálogo.</p>
-Você será responsável pelo desenvolvimento do aplicativo que irá catalogar livros e autores
-e gerar informações.
-O analista identificou operações básicas iniciais das classes:
-• Biblioteca: classe catálogo que gerencia o cadastro de livros:
-o cadastraLivro(Livro): recebe como parâmetro um novo Livro e cadastra-o no
+
+Biblioteca: classe catálogo que gerencia o cadastro de livros:
+<ul>
+<li>cadastraLivro(Livro): recebe como parâmetro um novo Livro e cadastra-o no
 sistema. Não pode haver Livros com o mesmo código ‘isbn’. Retorna true se o
-cadastro teve sucesso; ou false em caso contrário.
-o pesquisaLivro(String): retorna o livro com o código ‘isbn’ indicado. Se não
-houver livro com este código retorna null.
-o pesquisaLivro(int): retorna uma lista de livros com o ano indicado. Se não
-houver nenhum livro com este ano retorna null.
+cadastro teve sucesso; ou false em caso contrário.</li>
+<li>pesquisaLivro(String): retorna o livro com o código ‘isbn’ indicado. Se não
+houver livro com este código retorna null.</li>
+<li>pesquisaLivro(int): retorna uma lista de livros com o ano indicado. Se não
+houver nenhum livro com este ano retorna null.</li>
+</ul>
 • Grupo: classe catálogo que gerencia o cadastro de autores:
 o cadastraAutor(Autor): recebe como parâmetro um novo Autor e cadastra-o no
 sistema. Não pode haver autores com o mesmo código. Retorna true se o
@@ -28,9 +28,10 @@ o adicionaLivro(Livro): adiciona um novo livro ao autor.
 o pesquisaLivros(): retorna uma lista de livros do autor.
 • ACMEPublishing: classe do aplicativo:
 o executa(): executa o funcionamento do aplicativo.
-• Main: classe principal (inicial) do sistema:
-o main(String[]): cria um objeto ACMEPublishing e depois chama o método
-executa().
+<li>Main: classe principal (inicial) do sistema:
+main(String[]): cria um objeto ACMEPublishing e depois chama o método
+executa(). </li>
+</ul>
 O método executa() da classe ACMEPublishing deve realizar a sequência de passos:
 1. Cadastrar livros: lê todos os dados de cada livro e, se o isbn não for repetido,
 cadastra-o no sistema. Para cada livro cadastrado com sucesso no sistema, mostra
