@@ -23,11 +23,5 @@ public class App {
     }
 
     public void executar(){
-        System.out.println("Digite a sua idade: ");
-        int idade = entrada.nextInt();
-        System.out.println("Digite o seu nome: ");
-        String nome = entrada.nextLine();
-        System.out.println("Idade: " + idade);
-        System.out.println("Nome: " + nome);
     }
 }
