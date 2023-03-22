@@ -2,18 +2,18 @@
 <h3>Programação Orientada à Objeto - Marcelo Yamaguti</h3>
 <h4>1. Enunciado geral: </h4>
 <p>A ACMEPublishing é uma editora que gerencia livros e autores e que deseja automatizar o
-seu catálogo.</p>
-
-Biblioteca: classe catálogo que gerencia o cadastro de livros:
+seu catálogo. Sendo ele formado por:</p>
 <ul>
-<li>cadastraLivro(Livro): recebe como parâmetro um novo Livro e cadastra-o no
+<dl>
+<dt><li>Biblioteca: classe catálogo que gerencia o cadastro de livros:</li><dt>
+<dd><li>cadastraLivro(Livro): recebe como parâmetro um novo Livro e cadastra-o no
 sistema. Não pode haver Livros com o mesmo código ‘isbn’. Retorna true se o
-cadastro teve sucesso; ou false em caso contrário.</li>
-<li>pesquisaLivro(String): retorna o livro com o código ‘isbn’ indicado. Se não
-houver livro com este código retorna null.</li>
-<li>pesquisaLivro(int): retorna uma lista de livros com o ano indicado. Se não
-houver nenhum livro com este ano retorna null.</li>
-</ul>
+cadastro teve sucesso; ou false em caso contrário.</dd></li>
+<dd><li>pesquisaLivro(String): retorna o livro com o código ‘isbn’ indicado. Se não
+houver livro com este código retorna null.</dd></li>
+<dd><li>pesquisaLivro(int): retorna uma lista de livros com o ano indicado. Se não
+houver nenhum livro com este ano retorna null.</dd></li>
+</dl>
 • Grupo: classe catálogo que gerencia o cadastro de autores:
 o cadastraAutor(Autor): recebe como parâmetro um novo Autor e cadastra-o no
 sistema. Não pode haver autores com o mesmo código. Retorna true se o
