@@ -6,10 +6,10 @@ import java.nio.charset.Charset;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class App {
+public class ACMEPublishing {
     private Scanner entrada;
 
-    public App() {
+    public ACMEPublishing() {
         entrada = new Scanner(System.in);
         try {
             BufferedReader streamEntrada = new BufferedReader(new FileReader("entrada.txt"));

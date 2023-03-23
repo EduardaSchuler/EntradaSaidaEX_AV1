@@ -25,7 +25,7 @@ public class Book {
     }
 
     public boolean addAuthor(Author author){
-        if(authors.add(author)){
+        if(authors.add(author) == true){
             return true;
         } else {
             return false;

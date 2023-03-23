@@ -11,5 +11,19 @@ public class Author {
         books = new ArrayList<>();
         books.add(book);
     }
-
+    public Boolean addBook(Book book){
+        if (books.add(book) == true){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public ArrayList<Book> searchBooks(){
+        for (int i = 0; i < books.size(); i++) {
+            ArrayList<Book> a = new ArrayList<>();
+            a.add(books.get(i));
+            return a;
+        }
+        return null;
+    }
 }
