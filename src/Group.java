@@ -13,8 +13,11 @@ public class Group {
 
     public Author SearchAuthor(int code){
         for (int i = 0; i < authors.size(); i++) {
-            int = authors.get(i)
-            if ()
+            int a = authors.get(i).getCode();
+            if (a == code){
+                return authors.get(i);
+            }
         }
+        return null;
     }
 }

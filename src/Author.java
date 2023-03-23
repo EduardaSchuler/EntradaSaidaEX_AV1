@@ -11,6 +11,19 @@ public class Author {
         books = new ArrayList<>();
         books.add(book);
     }
+
+    public int getCode() {
+        return code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<Book> getBooks() {
+        return books;
+    }
+
     public Boolean addBook(Book book){
         return books.add(book);
     }
