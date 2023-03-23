@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Library {
-    ArrayList<Book> books;
+    private ArrayList<Book> books;
 
     public Library(){
         books = new ArrayList<>();

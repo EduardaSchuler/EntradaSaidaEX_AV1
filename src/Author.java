@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
 public class Author {
-    private int isbn;
+    private int code;
     private String name;
     private ArrayList<Book> books;
 
-    public Author(int isbn, String name, Book book) {
-        this.isbn = isbn;
+    public Author(int code, String name, Book book) {
+        this.code = code;
         this.name = name;
         books = new ArrayList<>();
         books.add(book);
