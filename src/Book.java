@@ -3,14 +3,16 @@ import java.util.ArrayList;
 public class Book {
     private String title;
     private int year;
-    private int isbn;
+    private String isbn;
     private ArrayList<Author> authors;
 
-    public Book(int isbn, String title, int year){
+    public Book(String isbn, String title, int year){
         this.title = title;
         this.year = year;
         this.isbn = isbn;
     }
+
+    public Book(){ }
 
     public String getTitle() {
         return title;
@@ -20,15 +22,11 @@ public class Book {
         return year;
     }
 
-    public int getIsbn() {
+    public String getIsbn() {
         return isbn;
     }
 
     public boolean addAuthor(Author author){
-        if(authors.add(author) == true){
-            return true;
-        } else {
-            return false;
-        }
+        return authors.add(author);
     }
 }

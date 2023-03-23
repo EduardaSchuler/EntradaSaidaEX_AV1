@@ -12,12 +12,9 @@ public class Author {
         books.add(book);
     }
     public Boolean addBook(Book book){
-        if (books.add(book) == true){
-            return true;
-        } else {
-            return false;
-        }
+        return books.add(book);
     }
+
     public ArrayList<Book> searchBooks(){
         for (int i = 0; i < books.size(); i++) {
             ArrayList<Book> a = new ArrayList<>();
