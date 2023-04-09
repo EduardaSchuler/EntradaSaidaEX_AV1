@@ -8,7 +8,11 @@ public class Library {
     }
 
     public boolean registerNewBook(Book book){
-        return books.add(book);
+        if(books.contains(book.getIsbn())){
+            return false;
+        } else {
+            return books.add(book);
+        }
     }
 
     public Book searchBook(String isbn){
@@ -29,6 +33,10 @@ public class Library {
                 selectedBooks.add(books.get(i));
             }
         }
-        return null;
+        if(selectedBooks.isEmpty()){
+            return null;
+        } else {
+            return selectedBooks;
+        }
     }
 }

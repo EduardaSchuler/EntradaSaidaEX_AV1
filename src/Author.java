@@ -30,9 +30,9 @@ public class Author {
 
     public ArrayList<Book> searchBooks(){
         for (int i = 0; i < books.size(); i++) {
-            ArrayList<Book> a = new ArrayList<>();
-            a.add(books.get(i));
-            return a;
+            ArrayList<Book> aux = new ArrayList<>();
+            aux.add(books.get(i));
+            return aux;
         }
         return null;
     }

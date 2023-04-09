@@ -7,8 +7,12 @@ public class Group {
         authors = new ArrayList<>();
     }
 
-    public boolean RegisterNewAuthor(Author author){
-        return authors.add(author);
+    public boolean registerNewAuthor(Author author){
+        if(authors.contains(author.getCode())){
+            return false;
+        } else {
+            return authors.add(author);
+        }
     }
 
     public Author SearchAuthor(int code){
