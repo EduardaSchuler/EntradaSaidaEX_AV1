@@ -25,10 +25,14 @@ public class Author {
     }
 
     public Boolean addBook(Book book){
-        return books.add(book);
+        if(books.contains(book.getIsbn())){
+            return false;
+        } else {
+            return true;
+        }
     }
 
-    public ArrayList<Book> searchBooks(){
+    public ArrayList<Book> getBooksByAuthor(){
         for (int i = 0; i < books.size(); i++) {
             ArrayList<Book> aux = new ArrayList<>();
             aux.add(books.get(i));

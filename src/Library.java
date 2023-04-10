@@ -7,11 +7,15 @@ public class Library {
         books = new ArrayList<>();
     }
 
+    public ArrayList<Book> getBooks() {
+        return books;
+    }
+
     public boolean registerNewBook(Book book){
         if(books.contains(book.getIsbn())){
             return false;
         } else {
-            return books.add(book);
+            return true;
         }
     }
 

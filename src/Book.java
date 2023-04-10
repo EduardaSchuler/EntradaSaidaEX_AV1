@@ -10,9 +10,8 @@ public class Book {
         this.title = title;
         this.year = year;
         this.isbn = isbn;
+        authors = new ArrayList<>();
     }
-
-    public Book(){ }
 
     public String getTitle() {
         return title;
@@ -27,6 +26,10 @@ public class Book {
     }
 
     public boolean addAuthor(Author author){
-        return authors.add(author);
+        if(authors.contains(author.getCode())){
+            return false;
+        } else {
+            return true;
+        }
     }
 }

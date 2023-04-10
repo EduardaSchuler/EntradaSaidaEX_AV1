@@ -7,6 +7,10 @@ public class Group {
         authors = new ArrayList<>();
     }
 
+    public ArrayList<Author> getAuthors() {
+        return authors;
+    }
+
     public boolean registerNewAuthor(Author author){
         if(authors.contains(author.getCode())){
             return false;
