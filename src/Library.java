@@ -15,15 +15,14 @@ public class Library {
         if(books.contains(book.getIsbn())){
             return false;
         } else {
-            return true;
+            return books.add(book);
         }
     }
 
     public Book searchBook(String isbn){
-        for (int i = 0; i < books.size(); i++) {
-            String a = books.get(i).getIsbn();
-            if(isbn.equals(a)){
-                return books.get(i);
+        for(Book book : books){
+            if(book.getIsbn().equals(isbn)) {
+                return book;
             }
         }
         return null;

@@ -16,9 +16,9 @@ public class ACMEPublishing {
         in = new Scanner(System.in);
         try {
             BufferedReader streamEntrada = new BufferedReader(new FileReader("dados.txt"));
-            in = new Scanner(streamEntrada);   // Usa como entrada um arquivo
+            in = new Scanner(streamEntrada);
             PrintStream streamSaida = new PrintStream(new File("saida.txt"), Charset.forName("UTF-8"));
-            System.setOut(streamSaida);             // Usa como saida um arquivo
+            System.setOut(streamSaida);
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -31,7 +31,11 @@ public class ACMEPublishing {
         registerNewAuthor();
         numberRegisteredAuthors();
         addBookToAuthor();
-        showAllBooksByAnAuthor();
+        getAllBooksByAnAuthor();
+        getAllAuthorByAnBook();
+        getBookByYear();
+
+        menu();
     }
 
     public void menu(){
@@ -54,7 +58,6 @@ public class ACMEPublishing {
             year = in.nextLine();
             Book book = new Book(isbn, title, Integer.parseInt(year));
             if (library.registerNewBook(book) == true) {
-                library.getBooks().add(book);
                 System.out.println("1;" + book.getIsbn() + ";" + book.getTitle() + ";" + book.getYear());
             } else {
                 System.out.println("erro: não foi possivel cadastrar o livro, código ja existente");
@@ -78,7 +81,6 @@ public class ACMEPublishing {
             isbn = library.searchBook(in.nextLine());
             Author author = new Author(Integer.parseInt(code), name, isbn);
             if (group.registerNewAuthor(author) == true) {
-                group.getAuthors().add(author);
                 System.out.println("3;" + author.getCode() + ";" + author.getName() + ";" + author.getBooks().get(0).getIsbn());
             } else {
                 System.out.println("erro: não foi possivel cadastrar o livro, código ja existente");
@@ -92,28 +94,46 @@ public class ACMEPublishing {
 
     public void addBookToAuthor(){
         String code;
-        String isbn;
         do {
             code = in.nextLine();
             if (code.equals("-1"))
                 break;
-            isbn = in.nextLine();
-            Book book = library.searchBook(isbn);
-            Author author = group.SearchAuthor(Integer.parseInt(code));
-            group.SearchAuthor(Integer.parseInt(code)).addBook(book);
-            library.searchBook(isbn).addAuthor(author);
-
-            System.out.println("5;" + code +";"+ author.getName() +";"+ isbn +";"+ book.getTitle() +";"+ book.getYear());
+            String isbn = in.nextLine();
+            group.SearchAuthor(Integer.parseInt(code)).addBook(library.searchBook(isbn));
+            library.searchBook(isbn).addAuthor(group.SearchAuthor(Integer.parseInt(code)));
+            System.out.println("5;" + group.SearchAuthor(Integer.parseInt(code)).getCode() + ";" +
+                    group.SearchAuthor(Integer.parseInt(code)).getName() + ";" +
+                    library.searchBook(isbn).getIsbn() + ";" + library.searchBook(isbn).getTitle()
+                    + ";" + library.searchBook(isbn).getYear());
         } while (code != "-1");
     }
 
-    public void showAllBooksByAnAuthor(){
+    public void getAllBooksByAnAuthor(){
         String code = in.nextLine();
         Author author = group.SearchAuthor(Integer.parseInt(code));
-        ArrayList<Book> books = author.getBooksByAuthor();
+        ArrayList<Book> books = author.getBooks();
         for (int i = 0; i < books.size(); i++) {
             System.out.println("6;" + code +";"+ author.getName() +";"+ books.get(i).getTitle() +";"+ books.get(i).getYear());
         }
     }
+    public void getAllAuthorByAnBook(){
+        String isbn = in.nextLine();
+        Book book = library.searchBook(isbn);
+        String name = ";";
+        String aux = "7;" + book.getIsbn();
+        for (int i = 0; i < book.getAuthors().size(); i++) {
+            name = name + library.searchBook(isbn).getAuthors().get(i).getName();
+        }
+        System.out.println(aux + name);
+    }
 
+    public void
+
+    public void getBookByYear(){
+        String year = in.nextLine();
+        ArrayList<Book> books = library.searchBook(Integer.parseInt(year));
+        for (int i = 0; i < books.size(); i++) {
+            System.out.println("10;" + books.get(i).getIsbn() + ";" + books.get(i).getTitle() + ";" + books.get(i).getYear());
+        }
+    }
 }

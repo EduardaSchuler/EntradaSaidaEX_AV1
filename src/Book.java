@@ -13,6 +13,10 @@ public class Book {
         authors = new ArrayList<>();
     }
 
+    public ArrayList<Author> getAuthors() {
+        return authors;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -26,10 +30,7 @@ public class Book {
     }
 
     public boolean addAuthor(Author author){
-        if(authors.contains(author.getCode())){
-            return false;
-        } else {
-            return true;
-        }
+
+        return authors.add(author);
     }
 }
